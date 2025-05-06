@@ -9,6 +9,7 @@ import Download from "./pages/Download";
 import News from "./pages/News";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import ContactInfo from "./components/ContactInfo";
+import Discloser from "./pages/Discloser";
 
 const App = () => {
 	return (
@@ -21,6 +22,7 @@ const App = () => {
 				<Route path="/download" element={<Download />} />
 				<Route path="/news" element={<News />} />
 				<Route path="/contact" element={<ContactInfo />} />
+				<Route path="/Mandatory-Public-Disclosure" element={<Discloser />} />
 			</Routes>
 			<Footer></Footer>
 

@@ -168,6 +168,12 @@ const Navbar = () => {
 						>
 							NEWS AND EVENTS
 						</NavLink>
+						<NavLink
+							to="/Mandatory-Public-Disclosure"
+							className="hover:bg-[#f1992d] hover:text-white pt-5 px-3"
+						>
+							MANDATORY PUBLIC DISCLOSURE
+						</NavLink>
 					</div>
 
 					<div className="text-xl font-bold">
