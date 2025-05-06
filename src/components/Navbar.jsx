@@ -209,6 +209,12 @@ const Navbar = () => {
 						<NavLink to="/news" className="block py-2">
 							NEWS AND EVENTS
 						</NavLink>
+						<NavLink
+							to="/Mandatory-Public-Disclosure"
+							className="block py-2 border-b"
+						>
+							MANDATORY PUBLIC DISCLOSURE
+						</NavLink>
 					</div>
 				)}
 			</div>
