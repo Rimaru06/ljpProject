@@ -206,12 +206,12 @@ const Navbar = () => {
 						<NavLink to="/download" className="block py-2 border-b">
 							DOWNLOAD
 						</NavLink>
-						<NavLink to="/news" className="block py-2">
+						<NavLink to="/news" className="block py-2 border-b">
 							NEWS AND EVENTS
 						</NavLink>
 						<NavLink
 							to="/Mandatory-Public-Disclosure"
-							className="block py-2 border-b"
+							className="block py-2 "
 						>
 							MANDATORY PUBLIC DISCLOSURE
 						</NavLink>
