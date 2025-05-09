@@ -59,50 +59,22 @@ const Download = () => {
             </tr>
           </thead>
           <tbody>
-            {documents.map((item, i) => (
-              <tr className="border-t hover:bg-gray-50" key={i}>
-                <td className="p-3 border">{item.title}</td>
-                <td className="p-3 border text-blue-600 underline cursor-pointer">
-                  <button
-                    onClick={async () => {
-                      try {
-                        // Fetch the encrypted file
-                        const response = await axios.get(
-                          `${import.meta.env.VITE_API_BASE_URL}/${item.fileUrl}`,
-                          {
-                            responseType: "blob", // Ensure the response is treated as a binary file
-                          }
-                        );
-
-                        // Decrypt the file (example using a decryption function)
-                        // Example decryption function (replace with actual logic if needed)
-                        const decryptFile = async (data) => {
-                          // Simulate decryption (replace with real decryption logic)
-                          return new Blob([data], { type: "application/octet-stream" });
-                        };
-
-                        const decryptedBlob = await decryptFile(response.data);
-
-                        // Create a URL for the decrypted file
-                        const url = window.URL.createObjectURL(decryptedBlob);
-                        const link = document.createElement("a");
-                        link.href = url;
-                        link.setAttribute("download", item.title); // Set the file name
-                        document.body.appendChild(link);
-                        link.click();
-                        link.remove();
-                      } catch (error) {
-                        console.error("Failed to download or decrypt file:", error);
-                      }
-                    }}
-                    className="text-blue-600 underline"
-                  >
-                    Click here to download
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+  {documents.map((item, i) => (
+    <tr className="border-t hover:bg-gray-50" key={i}>
+      <td className="p-3 border">{item.title}</td>
+      <td className="p-3 border text-blue-600 underline cursor-pointer">
+        <a
+          href={`${import.meta.env.VITE_API_BASE_URL}/${item.fileUrl}`} // Use the fileUrl directly
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline"
+        >
+          Click here to download
+        </a>
+      </td>
+    </tr>
+  ))}
+</tbody>
         </table>
       </div>
     </div>
