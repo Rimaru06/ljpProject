@@ -13,7 +13,6 @@ const Download = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch documents from backend
   useEffect(() => {
     const fetchDocuments = async () => {
       try {
@@ -65,7 +64,7 @@ const Download = () => {
                 <td className="p-3 border">{item.title}</td>
                 <td className="p-3 border">
                   <a
-                    href={`${import.meta.env.VITE_API_BASE_URL}/${item.fileUrl}`}
+                    href={item.fileUrl} // ✅ Direct Cloudinary URL
                     download
                     target="_blank"
                     rel="noopener noreferrer"
